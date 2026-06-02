@@ -1,0 +1,5 @@
+# Created at 2026-06-01T21:46:29.130
+Boot Manifest-JAR contains absolute paths in classpath 'E:\OneDrive\Área de Trabalho\disastereye\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

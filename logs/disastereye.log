@@ -1,0 +1,139 @@
+2026-06-01 21:34:18 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplication - Starting DisasterEyeApplication using Java 22.0.1 with PID 6932 (E:\OneDrive\Área de Trabalho\disastereye\target\classes started by Rafinha in E:\OneDrive\Área de Trabalho\disastereye)
+2026-06-01 21:34:18 [main] DEBUG [traceId=] b.c.f.d.DisasterEyeApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-06-01 21:34:18 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-01 21:34:20 [main] INFO  [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-01 21:34:20 [main] INFO  [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 3 JPA repository interfaces.
+2026-06-01 21:34:21 [main] INFO  [traceId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-01 21:34:21 [main] INFO  [traceId=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-01 21:34:21 [main] INFO  [traceId=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-06-01 21:34:21 [main] INFO  [traceId=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-01 21:34:21 [main] INFO  [traceId=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2681 ms
+2026-06-01 21:34:21 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-01 21:34:21 [main] INFO  [traceId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:disastereyedb user=SA
+2026-06-01 21:34:21 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-01 21:34:21 [main] INFO  [traceId=] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:disastereyedb'
+2026-06-01 21:34:21 [main] ERROR [traceId=] o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthFilter' defined in file [E:\OneDrive\Área de Trabalho\disastereye\target\classes\br\com\fiap\disastereye\filter\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [E:\OneDrive\Área de Trabalho\disastereye\target\classes\br\com\fiap\disastereye\config\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jwtAuthFilter': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2026-06-01 21:34:22 [main] INFO  [traceId=] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-06-01 21:34:22 [main] WARN  [traceId=] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-06-01 21:34:22 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-01 21:34:22 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-01 21:34:22 [main] INFO  [traceId=] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-01 21:34:22 [main] ERROR [traceId=] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  jwtAuthFilter defined in file [E:\OneDrive\Área de Trabalho\disastereye\target\classes\br\com\fiap\disastereye\filter\JwtAuthFilter.class]
+↑     ↓
+|  securityConfig defined in file [E:\OneDrive\Área de Trabalho\disastereye\target\classes\br\com\fiap\disastereye\config\SecurityConfig.class]
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2026-06-01 21:46:31 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplicationTests - Starting DisasterEyeApplicationTests using Java 22.0.1 with PID 15860 (started by Rafinha in E:\OneDrive\Área de Trabalho\disastereye)
+2026-06-01 21:46:31 [main] DEBUG [traceId=] b.c.f.d.DisasterEyeApplicationTests - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-06-01 21:46:31 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplicationTests - The following 1 profile is active: "test"
+2026-06-01 21:46:32 [main] INFO  [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-01 21:46:32 [main] INFO  [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2026-06-01 21:46:33 [main] INFO  [traceId=] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-01 21:46:33 [main] INFO  [traceId=] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-01 21:46:33 [main] INFO  [traceId=] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-01 21:46:33 [main] INFO  [traceId=] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-01 21:46:34 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-01 21:46:34 [main] INFO  [traceId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:disastereyedb user=SA
+2026-06-01 21:46:34 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-01 21:46:34 [main] WARN  [traceId=] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-01 21:46:35 [main] INFO  [traceId=] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-01 21:46:35 [main] INFO  [traceId=] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-01 21:46:35 [main] INFO  [traceId=] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-01 21:46:36 [main] WARN  [traceId=] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-01 21:46:37 [main] INFO  [traceId=] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-06-01 21:46:37 [main] INFO  [traceId=] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ebc1f14, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c2bccb5, org.springframework.security.web.context.SecurityContextHolderFilter@2032ad89, org.springframework.security.web.header.HeaderWriterFilter@197115d6, org.springframework.web.filter.CorsFilter@1067da91, org.springframework.security.web.authentication.logout.LogoutFilter@203cab01, br.com.fiap.disastereye.filter.JwtAuthFilter@fd01c56, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@655c97da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f24fb1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39785b39, org.springframework.security.web.session.SessionManagementFilter@542024ac, org.springframework.security.web.access.ExceptionTranslationFilter@425eb98a, org.springframework.security.web.access.intercept.AuthorizationFilter@1e9d8137]
+2026-06-01 21:46:38 [main] INFO  [traceId=] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:disastereyedb'
+2026-06-01 21:46:38 [main] DEBUG [traceId=] b.c.f.d.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-06-01 21:46:38 [main] INFO  [traceId=] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-06-01 21:46:38 [main] INFO  [traceId=] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-06-01 21:46:38 [main] INFO  [traceId=] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-06-01 21:46:38 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplicationTests - Started DisasterEyeApplicationTests in 7.907 seconds (process running for 9.117)
+2026-06-01 21:46:38 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - Usuário ADMIN criado: admin@disastereye.com / admin123
+2026-06-01 21:46:38 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - Usuário RESPONDER criado: responder@disastereye.com / resp123
+2026-06-01 21:46:39 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - Usuário USER criado: user@disastereye.com / user123
+2026-06-01 21:46:39 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - 4 alertas de exemplo criados.
+2026-06-01 21:46:39 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - === DisasterEye inicializado com dados de exemplo ===
+2026-06-01 21:46:40 [main] INFO  [traceId=985f558c] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=2cc47616] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:40 [main] DEBUG [traceId=3dff890b] b.c.f.d.service.DisasterAlertService - Buscando alertas em -17.7, -57.4 num raio de 200.0km
+2026-06-01 21:46:40 [main] INFO  [traceId=105d503a] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=24856b60] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=5986ed58] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=006a21ef] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:40 [main] DEBUG [traceId=8b916f05] b.c.f.d.filter.JwtAuthFilter - Usuário autenticado: admin@disastereye.com | traceId: 8b916f05
+2026-06-01 21:46:40 [main] INFO  [traceId=8b916f05] b.c.f.d.service.DisasterAlertService - Novo alerta criado [id=5] tipo=WILDFIRE severidade=HIGH por=admin@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=0c606fb3] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=89457c52] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:40 [main] INFO  [traceId=ca4ec1bb] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=ef691d7a] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=32a05e6d] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=62bc9f6d] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=33136fa9] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:41 [main] WARN  [traceId=20c73cd4] b.c.f.d.e.GlobalExceptionHandler - [AUTH] Credenciais inválidas | path=/api/v1/auth/login
+2026-06-01 21:46:41 [main] INFO  [traceId=d67865a5] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=7603fd3f] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=75160239] b.c.f.d.service.AuthService - Novo usuário registrado: novo@test.com
+2026-06-01 21:46:41 [main] INFO  [traceId=8d38c7da] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=166bad5e] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:41 [main] DEBUG [traceId=142e6bd8] b.c.f.d.filter.JwtAuthFilter - Usuário autenticado: user@disastereye.com | traceId: 142e6bd8
+2026-06-01 21:46:41 [main] INFO  [traceId=78e4a1c6] b.c.f.d.service.AuthService - Login realizado: user@disastereye.com
+2026-06-01 21:46:41 [main] INFO  [traceId=9524123f] b.c.f.d.service.AuthService - Login realizado: admin@disastereye.com
+2026-06-01 21:46:41 [main] DEBUG [traceId=f1a69098] b.c.f.d.filter.JwtAuthFilter - Usuário autenticado: user@disastereye.com | traceId: f1a69098
+2026-06-01 21:46:41 [SpringApplicationShutdownHook] INFO  [traceId=] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-01 21:46:41 [SpringApplicationShutdownHook] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-01 21:46:41 [SpringApplicationShutdownHook] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-01 21:51:59 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplication - Starting DisasterEyeApplication using Java 22.0.1 with PID 2136 (E:\OneDrive\Área de Trabalho\disastereye\target\classes started by Rafinha in E:\OneDrive\Área de Trabalho\disastereye)
+2026-06-01 21:51:59 [main] DEBUG [traceId=] b.c.f.d.DisasterEyeApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-06-01 21:51:59 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-01 21:52:01 [main] INFO  [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-01 21:52:01 [main] INFO  [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2194 ms
+2026-06-01 21:52:02 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-01 21:52:02 [main] INFO  [traceId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:disastereyedb user=SA
+2026-06-01 21:52:02 [main] INFO  [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:disastereyedb'
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-01 21:52:02 [main] INFO  [traceId=] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-01 21:52:02 [main] INFO  [traceId=] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-01 21:52:03 [main] INFO  [traceId=] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-01 21:52:03 [main] WARN  [traceId=] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-01 21:52:04 [main] INFO  [traceId=] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-01 21:52:04 [main] INFO  [traceId=] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-01 21:52:04 [main] DEBUG [traceId=] b.c.f.d.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-06-01 21:52:04 [main] INFO  [traceId=] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-01 21:52:05 [main] WARN  [traceId=] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-01 21:52:06 [main] INFO  [traceId=] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-06-01 21:52:06 [main] INFO  [traceId=] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1836afd6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37cac511, org.springframework.security.web.context.SecurityContextHolderFilter@1ee98d0d, org.springframework.security.web.header.HeaderWriterFilter@406b6988, org.springframework.web.filter.CorsFilter@68b4e3a1, org.springframework.security.web.authentication.logout.LogoutFilter@3e411e5d, br.com.fiap.disastereye.filter.JwtAuthFilter@45ea6c24, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47d98145, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d6d57d4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@315c13b4, org.springframework.security.web.session.SessionManagementFilter@59a62b0e, org.springframework.security.web.access.ExceptionTranslationFilter@7c11f00a, org.springframework.security.web.access.intercept.AuthorizationFilter@b6ae271]
+2026-06-01 21:52:06 [main] INFO  [traceId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-01 21:52:06 [main] INFO  [traceId=] b.c.f.d.DisasterEyeApplication - Started DisasterEyeApplication in 7.545 seconds (process running for 8.092)
+2026-06-01 21:52:07 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - Usuário ADMIN criado: admin@disastereye.com / admin123
+2026-06-01 21:52:07 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - Usuário RESPONDER criado: responder@disastereye.com / resp123
+2026-06-01 21:52:07 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - Usuário USER criado: user@disastereye.com / user123
+2026-06-01 21:52:07 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - 4 alertas de exemplo criados.
+2026-06-01 21:52:07 [main] INFO  [traceId=] b.c.f.d.config.DataInitializer - === DisasterEye inicializado com dados de exemplo ===
+2026-06-01 21:52:18 [http-nio-8080-exec-1] INFO  [traceId=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-01 21:52:18 [http-nio-8080-exec-1] INFO  [traceId=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-01 21:52:18 [http-nio-8080-exec-1] INFO  [traceId=] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-01 21:52:20 [http-nio-8080-exec-10] INFO  [traceId=46a4f0a4] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 918 ms
