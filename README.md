@@ -6,9 +6,9 @@
 
 ---
 ## Integrantes
-Giovanna Franco Gaudino Rodrigues RM553701 
-Rafael de Almeida Sigoli RM554019 
-Rafael Jorge Del Padre RM552765
+- Giovanna Franco Gaudino Rodrigues RM553701 
+- Rafael de Almeida Sigoli RM554019
+- Rafael Jorge Del Padre RM552765
 ---
 
 ## 📌 Problema Abordado
