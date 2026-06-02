@@ -5,6 +5,11 @@
 > Disciplina: Arquitetura Orientada a Serviço (SOA)
 
 ---
+## Integrantes
+Giovanna Franco Gaudino Rodrigues RM553701 
+Rafael de Almeida Sigoli RM554019 
+Rafael Jorge Del Padre RM552765
+---
 
 ## 📌 Problema Abordado
 
@@ -16,6 +21,8 @@ O **DisasterEye** resolve isso integrando dados de satélites da NASA (EONET) co
 
 ## 🏗️ Arquitetura da Solução
 
+
+https://mermaid.ai/d/4d19985a-62ed-42ba-99e6-dac209844a54
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     CLIENTES                                │
