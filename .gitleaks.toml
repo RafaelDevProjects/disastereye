@@ -1,0 +1,68 @@
+# =============================================================================
+# .gitleaks.toml  —  Política de varredura de segredos do DisasterEye
+# FIAP — Global Solution 1º Semestre/2026 — Módulo DevSecOps (Cibersegurança)
+# Temas: Gestão de Segredos + Segurança como Código
+#
+# Mantém TODAS as regras padrão do Gitleaks (useDefault = true) e adiciona
+# regras específicas para os segredos conhecidos deste projeto, que as regras
+# genéricas não capturam (strings de baixa entropia / sem aspas em YAML).
+# =============================================================================
+
+title = "DisasterEye - Gitleaks Config"
+
+[extend]
+useDefault = true
+
+# -----------------------------------------------------------------------------
+# Regra 1 — Secret de assinatura JWT hardcoded (o achado mais crítico)
+# Ex.: application.yml -> security.jwt.secret: disastereye-super-secret-key-...
+# -----------------------------------------------------------------------------
+[[rules]]
+id          = "disastereye-jwt-secret"
+description = "Secret de assinatura JWT hardcoded em arquivo de configuracao"
+regex       = '''(?i)secret\s*:\s*[A-Za-z0-9_\-]{16,}'''
+keywords    = ["secret"]
+tags        = ["jwt", "secret", "disastereye"]
+
+# -----------------------------------------------------------------------------
+# Regra 2 — Senha de datasource em texto plano
+# Ex.: application.yml -> spring.datasource.password: password
+# -----------------------------------------------------------------------------
+[[rules]]
+id          = "disastereye-datasource-password"
+description = "Senha de datasource em texto plano em arquivo de configuracao"
+regex       = '''(?i)password\s*:\s*\S+'''
+keywords    = ["password"]
+tags        = ["password", "database", "disastereye"]
+
+# -----------------------------------------------------------------------------
+# Regra 3 — Credenciais de seed hardcoded no codigo-fonte
+# Ex.: DataInitializer.java -> passwordEncoder.encode("admin123")
+# -----------------------------------------------------------------------------
+[[rules]]
+id          = "disastereye-hardcoded-credentials"
+description = "Credencial de seed hardcoded no codigo-fonte"
+regex       = '''encode\(\s*"[^"]{4,}"\s*\)'''
+keywords    = ["encode"]
+tags        = ["password", "seed", "disastereye"]
+
+# -----------------------------------------------------------------------------
+# Regra 4 — Chave de API NASA hardcoded
+# Ex.: application.yml -> nasa.api.key: DEMO_KEY
+# (DEMO_KEY e publica, mas ainda assim deve vir de variavel de ambiente)
+# -----------------------------------------------------------------------------
+[[rules]]
+id          = "disastereye-nasa-api-key"
+description = "Chave de API NASA hardcoded em arquivo de configuracao"
+regex       = '''(?i)\bkey\s*:\s*[A-Z0-9_]{6,}'''
+keywords    = ["key"]
+tags        = ["api-key", "nasa", "disastereye"]
+
+# -----------------------------------------------------------------------------
+# Allowlist — evita que o proprio arquivo de config seja sinalizado
+# -----------------------------------------------------------------------------
+[allowlist]
+description = "Allowlist global"
+paths = [
+    '''\.gitleaks\.toml''',
+]
