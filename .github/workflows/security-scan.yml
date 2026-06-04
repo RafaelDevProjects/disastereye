@@ -1,0 +1,40 @@
+# =============================================================================
+# Pipeline de Seguranca — Varredura de Segredos (Gitleaks)
+# FIAP — Global Solution 1o Semestre/2026 — Modulo DevSecOps
+#
+# Controle: Gestao de Segredos via SAST de segredos no CI/CD.
+# Roda automaticamente a cada push e pull request, e pode ser disparado
+# manualmente (workflow_dispatch) — este modo faz a varredura do HISTORICO
+# COMPLETO, ideal para a evidencia/demonstracao da atividade.
+# =============================================================================
+name: Security - Secret Scan (Gitleaks)
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:   # "Run workflow" na aba Actions -> varre todo o historico
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: Gitleaks Secret Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (historico completo)
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0   # necessario para varrer todos os commits
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG: .gitleaks.toml
+          # ----------------------------------------------------------------
+          # ATENCAO: descomente a linha abaixo SOMENTE se o repositorio
+          # pertencer a uma ORGANIZACAO do GitHub. Para repo de conta
+          # PESSOAL nao e necessario nenhuma licenca.
+          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+          # ----------------------------------------------------------------
