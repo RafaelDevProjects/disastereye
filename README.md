@@ -296,7 +296,7 @@ disastereye/
 ```
 ---
 
-# 🌍 Alinhamento com ODS 9
+## 🌍 Alinhamento com ODS 9
 
 O DisasterEye contribui diretamente para o ODS 9 (Indústria, Inovação e Infraestrutura):
 
@@ -307,8 +307,7 @@ O DisasterEye contribui diretamente para o ODS 9 (Indústria, Inovação e Infra
 - **Integração de sistemas**: SOA com comunicação entre serviços internos e externos
 ---
 
-# Entrega Cybersegurança 
-## 🛡️ DevSecOps — Segurança no Pipeline (CI/CD)
+# 🛡️ DevSecOps — Segurança no Pipeline (CI/CD)
 
 > Módulo de Cibersegurança da Global Solution.
 > Aplicação de práticas de **DevSecOps** ao DisasterEye, com segurança integrada ao ciclo de desenvolvimento desde o repositório.
