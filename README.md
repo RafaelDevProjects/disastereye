@@ -310,8 +310,21 @@ O DisasterEye contribui diretamente para o ODS 9 (Indústria, Inovação e Infra
 # Entrega Cybersegurança 
 ## 🛡️ DevSecOps — Segurança no Pipeline (CI/CD)
 
-> Módulo de Cibersegurança da Global Solution (1º semestre de 2026).
+> Módulo de Cibersegurança da Global Solution.
 > Aplicação de práticas de **DevSecOps** ao DisasterEye, com segurança integrada ao ciclo de desenvolvimento desde o repositório.
+
+---
+## Integrantes
+- Giovanna Franco Gaudino Rodrigues RM553701 
+- Rafael de Almeida Sigoli RM554019
+- Rafael Jorge Del Padre RM552765
+---
+
+## 📌 Problema Abordado
+
+Desastres naturais como incêndios, inundações, deslizamentos e tempestades causam perdas humanas e econômicas significativas, especialmente em países como o Brasil. A falta de sistemas integrados de alerta precoce agrava o problema.
+
+O **DisasterEye** resolve isso integrando dados de satélites da NASA (EONET) com uma plataforma de alertas em tempo real, permitindo que autoridades e cidadãos recebam informações sobre riscos em sua região com base em coordenadas geoespaciais.
 
 ### Controle implementado: Gestão de Segredos (Secret Scanning)
 
