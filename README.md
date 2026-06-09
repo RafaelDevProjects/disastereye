@@ -245,8 +245,69 @@ Os testes de integração cobrem:
 
 ---
 
+## 🛠️ Tecnologias
+
+| Tecnologia | Versão | Uso |
+|---|---|---|
+| Java | 17 | Linguagem |
+| Spring Boot | 3.2.5 | Framework principal |
+| Spring Security | 6.x | Autenticação e autorização |
+| Spring Data JPA | 3.x | Persistência |
+| H2 Database | 2.x | Banco em memória (dev) |
+| JWT (jjwt) | 0.12.5 | Tokens de autenticação |
+| SpringDoc OpenAPI | 2.5.0 | Swagger UI |
+| Lombok | 1.18.x | Redução de boilerplate |
+| Maven | 3.8+ | Build e dependências |
+| GitHub Actions | — | CI/CD — execução do pipeline de segurança (DevSecOps) |
+| Gitleaks | gitleaks-action v3 | Varredura de segredos no CI (Secret Scanning) |
+
 ---
 
+## 📁 Estrutura do Projeto
+
+```
+disastereye/
+├── .github/
+│   └── workflows/
+│       └── security-scan.yml   # [DevSecOps] varredura de segredos (Gitleaks) no CI
+├── docs/
+│   └── evidencias/
+│       └── gitleaks-scan.png   # [DevSecOps] evidência da execução do scan
+├── src/
+│   ├── main/
+│   │   ├── java/br/com/fiap/disastereye/
+│   │   │   ├── config/          # SecurityConfig, OpenApiConfig, DataInitializer
+│   │   │   ├── controller/      # REST Controllers
+│   │   │   ├── dto/
+│   │   │   │   ├── request/     # DTOs de entrada com validações
+│   │   │   │   └── response/    # DTOs de saída padronizados
+│   │   │   ├── exception/       # GlobalExceptionHandler + exceções customizadas
+│   │   │   ├── filter/          # JwtAuthFilter (rastreabilidade + autenticação)
+│   │   │   ├── model/           # Entidades JPA
+│   │   │   ├── repository/      # Spring Data JPA Repositories
+│   │   │   ├── security/        # JwtService
+│   │   │   └── service/         # Lógica de negócio
+│   │   └── resources/
+│   │       └── application.yml  # Configurações da aplicação
+│   └── test/                    # Testes de integração
+├── .gitleaks.toml               # [DevSecOps] política de detecção de segredos
+├── pom.xml
+└── README.md
+```
+---
+
+# 🌍 Alinhamento com ODS 9
+
+O DisasterEye contribui diretamente para o ODS 9 (Indústria, Inovação e Infraestrutura):
+
+- **Inovação tecnológica**: Integração com satélites NASA para monitoramento em tempo real
+- **Infraestrutura resiliente**: API escalável e stateless pronta para cloud
+- **Conectividade**: Plataforma que conecta dados espaciais com usuários em campo
+- **Automação**: Detecção automática de eventos via dados de satélite
+- **Integração de sistemas**: SOA com comunicação entre serviços internos e externos
+---
+
+# Entrega Cybersegurança 
 ## 🛡️ DevSecOps — Segurança no Pipeline (CI/CD)
 
 > Módulo de Cibersegurança da Global Solution (1º semestre de 2026).
@@ -296,55 +357,3 @@ Como evolução, está prevista a **Análise de Dependências (SCA)** no mesmo p
 
 ---
 
-## 🛠️ Tecnologias
-
-| Tecnologia | Versão | Uso |
-|---|---|---|
-| Java | 17 | Linguagem |
-| Spring Boot | 3.2.5 | Framework principal |
-| Spring Security | 6.x | Autenticação e autorização |
-| Spring Data JPA | 3.x | Persistência |
-| H2 Database | 2.x | Banco em memória (dev) |
-| JWT (jjwt) | 0.12.5 | Tokens de autenticação |
-| SpringDoc OpenAPI | 2.5.0 | Swagger UI |
-| Lombok | 1.18.x | Redução de boilerplate |
-| Maven | 3.8+ | Build e dependências |
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-disastereye/
-├── src/
-│   ├── main/
-│   │   ├── java/br/com/fiap/disastereye/
-│   │   │   ├── config/          # SecurityConfig, OpenApiConfig, DataInitializer
-│   │   │   ├── controller/      # REST Controllers
-│   │   │   ├── dto/
-│   │   │   │   ├── request/     # DTOs de entrada com validações
-│   │   │   │   └── response/    # DTOs de saída padronizados
-│   │   │   ├── exception/       # GlobalExceptionHandler + exceções customizadas
-│   │   │   ├── filter/          # JwtAuthFilter (rastreabilidade + autenticação)
-│   │   │   ├── model/           # Entidades JPA
-│   │   │   ├── repository/      # Spring Data JPA Repositories
-│   │   │   ├── security/        # JwtService
-│   │   │   └── service/         # Lógica de negócio
-│   │   └── resources/
-│   │       └── application.yml  # Configurações da aplicação
-│   └── test/                    # Testes de integração
-├── pom.xml
-└── README.md
-```
-
----
-
-## 🌍 Alinhamento com ODS 9
-
-O DisasterEye contribui diretamente para o ODS 9 (Indústria, Inovação e Infraestrutura):
-
-- **Inovação tecnológica**: Integração com satélites NASA para monitoramento em tempo real
-- **Infraestrutura resiliente**: API escalável e stateless pronta para cloud
-- **Conectividade**: Plataforma que conecta dados espaciais com usuários em campo
-- **Automação**: Detecção automática de eventos via dados de satélite
-- **Integração de sistemas**: SOA com comunicação entre serviços internos e externos
