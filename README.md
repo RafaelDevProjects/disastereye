@@ -245,6 +245,57 @@ Os testes de integração cobrem:
 
 ---
 
+---
+
+## 🛡️ DevSecOps — Segurança no Pipeline (CI/CD)
+
+> Módulo de Cibersegurança da Global Solution (1º semestre de 2026).
+> Aplicação de práticas de **DevSecOps** ao DisasterEye, com segurança integrada ao ciclo de desenvolvimento desde o repositório.
+
+### Controle implementado: Gestão de Segredos (Secret Scanning)
+
+Foi adicionado ao projeto um **pipeline de varredura de segredos** executado no **GitHub Actions** a cada `push`, `pull request` e sob demanda. A ferramenta é o **Gitleaks**, com uma **política de detecção versionada no próprio repositório** (`.gitleaks.toml`) — o que caracteriza também a prática de **Segurança como Código**. Quando um segredo é encontrado, o job **falha e bloqueia** a continuidade do pipeline.
+
+**Temas atendidos:** Gestão de Segredos · Segurança como Código · Ferramentas de Segurança CI/CD.
+
+### Arquivos adicionados
+
+| Arquivo | Responsabilidade |
+|---|---|
+| `.github/workflows/security-scan.yml` | Workflow do GitHub Actions que executa o Gitleaks na etapa de CI |
+| `.gitleaks.toml` | Política de detecção: estende as regras padrão e adiciona regras específicas do projeto (secret do JWT, senha de datasource, credenciais de seed e chave de API) |
+
+### Como executar a varredura
+
+A cada `push`/`pull request` o scan roda automaticamente. Para varrer o **histórico completo** (recomendado para gerar a evidência):
+
+1. Acesse a aba **Actions** do repositório.
+2. Selecione o workflow **"Security - Secret Scan (Gitleaks)"**.
+3. Clique em **Run workflow** (gatilho `workflow_dispatch`).
+4. Abra a execução e o job **Gitleaks Secret Scan** para ver o resultado.
+
+> Em repositórios de **organização**, o `gitleaks-action` exige a variável `GITLEAKS_LICENSE` (gratuita). Em conta pessoal não é necessário.
+
+### Evidência
+
+Na execução realizada, o pipeline **detectou 10 ocorrências de segredos** versionados (incluindo o histórico do Git), sendo a mais crítica o **secret de assinatura do JWT**, que permitiria a forja de tokens válidos para qualquer perfil de usuário. O build foi **reprovado e bloqueado** (status *Failure*).
+
+![Resultado da varredura do Gitleaks no GitHub Actions](docs/evidencias/gitleaks-scan.png)
+
+### Remediação recomendada
+
+- **Rotacionar** os segredos expostos (o valor vazado deve ser considerado comprometido).
+- **Externalizar** as credenciais para variáveis de ambiente / **GitHub Secrets** (ex.: `${JWT_SECRET}`, `${DB_PASSWORD}` no `application.yml`).
+- Opcionalmente, **limpar o histórico** do Git (BFG / `git filter-repo`) e remover `target/` do versionamento.
+
+### Roadmap de DevSecOps
+
+Como evolução, está prevista a **Análise de Dependências (SCA)** no mesmo pipeline (OWASP Dependency-Check, Trivy ou Dependabot), reprovando o build em CVEs altas/críticas, além de monitoramento e auditoria contínua.
+
+> 📄 O detalhamento completo (mapeamento de riscos, controles, diagrama do pipeline, simulação e conexão com os ODS) está no documento técnico da entrega de Cibersegurança.
+
+---
+
 ## 🛠️ Tecnologias
 
 | Tecnologia | Versão | Uso |
